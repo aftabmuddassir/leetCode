@@ -1,0 +1,23 @@
+class Solution {
+    public int chalkReplacer(int[] chalk, int k) {
+
+        int n=chalk.length;
+        long sum =0;
+        for(int j=0;j<n;j++)
+        {
+            sum+=chalk[j];
+        }
+       
+       k=(int)(k%sum);
+        int i=0;
+
+        while(chalk[i]<=k)
+        {
+            k-=chalk[i];
+            i = (i+1)%n;
+        }
+
+        return i;
+        
+    }
+}
